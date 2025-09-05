@@ -14,3 +14,4 @@ Dentro de sus funcionalidades y aplicación en el modelado y diseño de datos de
 
 - Migración de Bases de Datos: Facilita el proceso de migración de datos y esquemas desde diversas plataformas de bases de datos hacia MySQL. Esta funcionalidad es particularmente útil en contextos de consolidación o cambio de infraestructura.
 
+---
