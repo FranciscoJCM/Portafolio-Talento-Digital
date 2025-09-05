@@ -24,4 +24,5 @@ Se importaron las librerías pandas, kagglehub, numpy, seaborn y matplotlib para
 
 Se conectó directamente el dataset con el path de kaggle **path = kagglehub.dataset_download("mathchi/diabetes-data-set")**.
 
-Una vez importado el 
+Una vez importado el dataset y creado el dataframe, se comienza con un análisis EDA para conocer los datos y la base.
+En primer lugar, se analizan los tipos de variables y se confirma que todas son numéricas. En segundo lugar se revisa si existen valores faltantes en el dataset para confirmar de manera programática y visual que no existen valores faltantes
