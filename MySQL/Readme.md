@@ -17,8 +17,37 @@ Dentro de sus funcionalidades y aplicación en el modelado y diseño de datos de
 ---
 
 ## Dataset
-Para el presente proyecto se utilizó la base de datos "Jardinería" difundida por José Juan Sánchez que puedes encontrar en el siguiente **[link]([url](https://josejuansanchez.org/bd/ejercicios-consultas-sql/index.html#jardiner%C3%ADa))**. El modelo relacional es el siguiente: ![Modelo Relacional Jardinería] (https://www.scribd.com/document/537047965/Taller-SQL-Base-de-Datos-Jardineria)
-<img src="https://www.scribd.com/document/537047965/Taller-SQL-Base-de-Datos-Jardineria">
-La creación de la base de datos se realizó con los siguientes comandos:
+Para el presente proyecto se utilizó la base de datos "Jardinería" difundida por José Juan Sánchez que puedes encontrar en el siguiente **[link]([url](https://josejuansanchez.org/bd/ejercicios-consultas-sql/index.html#jardiner%C3%ADa))**.
+Primero se creó la base de datos:
+```sql
 
+DROP DATABASE IF EXISTS jardineria;
+CREATE DATABASE jardineria CHARACTER SET utf8mb4;
+USE jardineria;
 
+#Para continuar con la creación de cada una de las tablas y sus llaves:
+
+CREATE TABLE cliente (
+  codigo_cliente INTEGER NOT NULL,
+  nombre_cliente VARCHAR(50) NOT NULL,
+  nombre_contacto VARCHAR(30) DEFAULT NULL,
+  apellido_contacto VARCHAR(30) DEFAULT NULL,
+  telefono VARCHAR(15) NOT NULL,
+  fax VARCHAR(15) NOT NULL,
+  linea_direccion1 VARCHAR(50) NOT NULL,
+  linea_direccion2 VARCHAR(50) DEFAULT NULL,
+  ciudad VARCHAR(50) NOT NULL,
+  region VARCHAR(50) DEFAULT NULL,
+  pais VARCHAR(50) DEFAULT NULL,
+  codigo_postal VARCHAR(10) DEFAULT NULL,
+  codigo_empleado_rep_ventas INTEGER DEFAULT NULL,
+  limite_credito NUMERIC(15,2) DEFAULT NULL,
+  PRIMARY KEY (codigo_cliente),
+  FOREIGN KEY (codigo_empleado_rep_ventas) REFERENCES empleado (codigo_empleado)
+);
+
+#Finalmente se insertaron los datos de cada una de las filas:
+
+INSERT INTO cliente VALUES (1,'GoldFish Garden','Daniel G','GoldFish','5556901745','5556901746','False Street 52 2 A',NULL,'San Francisco',NULL,'USA','24006',19,3000);
+
+---
