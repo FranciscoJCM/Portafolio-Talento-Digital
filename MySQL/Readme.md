@@ -15,3 +15,7 @@ Dentro de sus funcionalidades y aplicación en el modelado y diseño de datos de
 - Migración de Bases de Datos: Facilita el proceso de migración de datos y esquemas desde diversas plataformas de bases de datos hacia MySQL. Esta funcionalidad es particularmente útil en contextos de consolidación o cambio de infraestructura.
 
 ---
+
+## Dataset
+Para el presente proyecto se utilizó la base de datos "Jardinería" difundida por José Juan Sánchez que puedes encontrar en el siguiente **[link]([url](https://josejuansanchez.org/bd/ejercicios-consultas-sql/index.html#jardiner%C3%ADa))**. El modelo relacional es el siguiente: ![Modelo Relacional Jardinería] (https://www.scribd.com/document/537047965/Taller-SQL-Base-de-Datos-Jardineria)
+<img src="https://www.scribd.com/document/537047965/Taller-SQL-Base-de-Datos-Jardineria">
