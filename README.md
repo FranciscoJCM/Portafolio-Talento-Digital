@@ -14,4 +14,6 @@ Dentro de las unidades académicas del bootcamp, destacan las siguientes:
 - Base de Datos para Analistas
 - Fundamentos de Business Intelligence y Storytelling
 
-Estas unidades me permitieron profundizar y desarrollar mi conocimiento en herramientas de programación (Python), bases de datos (SQL) y visualización de datos (PowerBi), principalmente.
+Estas unidades me permitieron profundizar y desarrollar mi conocimiento en herramientas de programación (Python), bases de datos (SQL) y visualización de datos (PowerBi), principalmente. Debido a lo anterior, este portafolio cuenta con proyectos desarrollados en aquellas 3 herramientas.
+
+Es importante señalar que tanto los conjuntos de datos como su manipulación, análisis y conclusiones se limitan al ámbito académico. No obstante, se anima al lector a continuar con los análisis o a desarrollar nuevas hipótesis a partir del presente trabajo.
