@@ -16,10 +16,11 @@ Dentro de sus funcionalidades y aplicación en el modelado y diseño de datos de
 
 ---
 
-## Dataset
+## Dataset y análisis
 Para el presente proyecto se utilizó la base de datos "Jardinería" difundida por José Juan Sánchez que puedes encontrar en el siguiente **[link]([url](https://josejuansanchez.org/bd/ejercicios-consultas-sql/index.html#jardiner%C3%ADa))**.
-Primero se creó la base de datos:
+
 ```sql
+Primero se creó la base de datos:
 
 DROP DATABASE IF EXISTS jardineria;
 CREATE DATABASE jardineria CHARACTER SET utf8mb4;
