@@ -19,3 +19,6 @@ Dentro de sus funcionalidades y aplicación en el modelado y diseño de datos de
 ## Dataset
 Para el presente proyecto se utilizó la base de datos "Jardinería" difundida por José Juan Sánchez que puedes encontrar en el siguiente **[link]([url](https://josejuansanchez.org/bd/ejercicios-consultas-sql/index.html#jardiner%C3%ADa))**. El modelo relacional es el siguiente: ![Modelo Relacional Jardinería] (https://www.scribd.com/document/537047965/Taller-SQL-Base-de-Datos-Jardineria)
 <img src="https://www.scribd.com/document/537047965/Taller-SQL-Base-de-Datos-Jardineria">
+La creación de la base de datos se realizó con los siguientes comandos:
+
+
