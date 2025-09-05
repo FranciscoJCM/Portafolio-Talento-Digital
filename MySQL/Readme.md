@@ -16,7 +16,7 @@ Dentro de sus funcionalidades y aplicación en el modelado y diseño de datos de
 
 ---
 
-## Dataset y análisis
+## Dataset
 Para el presente proyecto se utilizó la base de datos "Jardinería" difundida por José Juan Sánchez que puedes encontrar en el siguiente **[link]([url](https://josejuansanchez.org/bd/ejercicios-consultas-sql/index.html#jardiner%C3%ADa))**.
 
 ```sql
@@ -26,8 +26,10 @@ DROP DATABASE IF EXISTS jardineria;
 CREATE DATABASE jardineria CHARACTER SET utf8mb4;
 USE jardineria;
 
-#Para continuar con la creación de cada una de las tablas y sus llaves:
+```
 
+Para continuar con la creación de cada una de las tablas y sus llaves:
+```sql
 CREATE TABLE cliente (
   codigo_cliente INTEGER NOT NULL,
   nombre_cliente VARCHAR(50) NOT NULL,
@@ -46,9 +48,12 @@ CREATE TABLE cliente (
   PRIMARY KEY (codigo_cliente),
   FOREIGN KEY (codigo_empleado_rep_ventas) REFERENCES empleado (codigo_empleado)
 );
-
-#Finalmente se insertaron los datos de cada una de las filas:
-
+```
+Finalmente se insertaron los datos de cada una de las filas:
+```sql
 INSERT INTO cliente VALUES (1,'GoldFish Garden','Daniel G','GoldFish','5556901745','5556901746','False Street 52 2 A',NULL,'San Francisco',NULL,'USA','24006',19,3000);
+```
 
 ---
+
+## Queries
