@@ -20,9 +20,13 @@ Age: Edad (años)
 Outcome: Variable de clase (0 o 1)
 
 ## Análisis
-Se importaron las librerías pandas, kagglehub, numpy, seaborn y matplotlib para el análisis del proyecto.
+Se importaron las librerías pandas, kagglehub, numpy, seaborn, stats (scipy) y matplotlib para el análisis del proyecto.
 
 Se conectó directamente el dataset con el path de kaggle **path = kagglehub.dataset_download("mathchi/diabetes-data-set")**.
 
 Una vez importado el dataset y creado el dataframe, se comienza con un análisis EDA para conocer los datos y la base.
-En primer lugar, se analizan los tipos de variables y se confirma que todas son numéricas. En segundo lugar se revisa si existen valores faltantes en el dataset para confirmar de manera programática y visual que no existen valores faltantes
+- Primero se analizan los tipos de variables y se confirma que todas son numéricas. 
+- Luego se revisa si existen valores faltantes en el dataset para confirmar de manera programática y visual que no existen valores faltantes.
+- Con el objetivo de realizar una regresión lineal, se filtran solo las mujeres diabéticas y se guarda un dataset nuevo. ``` df_diabetes = df[df["Outcome"] == 1]```
+- Se crea una matriz de correlación entre variables que influyen en la prevalencia de diabetes.
+- 
