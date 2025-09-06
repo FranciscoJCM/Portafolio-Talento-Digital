@@ -113,6 +113,8 @@ WHERE p.fecha_entrega > p.fecha_esperada
 GROUP BY o.codigo_oficina, o.ciudad
 ORDER BY total_productos_entregados_fuera_de_tiempo DESC;
 ```
+Esta consulta permite identificar que, pese a que las tiendas de San Francisco están en el top 5 de mayores ventas históricas, también son las tiendas con mas pedidos atrasados.
+
 
 3.- ¿Cuales empleados por sucursal fueron los que más vendieron en 2009?
 ```sql
@@ -138,8 +140,9 @@ GROUP BY p.nombre
 ORDER BY total_cantidad_pedida DESC
 LIMIT 20;
 ```
+
 # Conclusiones
 
 Este proyecto permitió practicar variadas consultas a una o varias tablas tiempo para responder a diferentes interrogantes. Además se incluyeron diferentes filtros, agrupaciones y agregaciones de variables para comprender mejor la base y poder responder las preguntas planteadas.
-Asimismo, se invita al lector a continuar el análisis del dataset con la inclusión de consultas anidadas que podrían entregar un panorama más claro de tendencias o un análisis más profundo de ciertos análisis.
+Asimismo, se invita al lector a continuar el análisis del dataset con la inclusión de consultas anidadas que podrían entregar un panorama más claro de tendencias o un análisis más profundo de ciertos casos específicos.
 
