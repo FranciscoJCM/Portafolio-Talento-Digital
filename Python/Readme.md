@@ -29,4 +29,8 @@ Una vez importado el dataset y creado el dataframe, se comienza con un análisis
 - Luego se revisa si existen valores faltantes en el dataset para confirmar de manera programática y visual que no existen valores faltantes.
 - Con el objetivo de realizar una regresión lineal, se filtran solo las mujeres diabéticas y se guarda un dataset nuevo. ``` df_diabetes = df[df["Outcome"] == 1]```
 - Se crea una matriz de correlación entre variables que influyen en la prevalencia de diabetes.
-- 
+- Como variable dependiente se toma "Pregnancies" y "Glucose" como variable independiente para correr la regresión lineal.
+
+# Conclusiones
+
+Este proyecto fue muy significativo  para comprender la importancia de EDA y la ejecución de una regresión lineal en Python. Si bien los resultados de la regresión arrojaron un R cuadrado de  0.017 (muy baja para explicar el modelo), se invita al lector a analizar las posibles razones de este valor tan bajo.
