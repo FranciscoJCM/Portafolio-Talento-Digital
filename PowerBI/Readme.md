@@ -16,12 +16,30 @@ IF(
     'atp_tennis'[Winner] = 'atp_tennis'[Player_1],
     'atp_tennis'[Rank_1] - 'atp_tennis'[Rank_2],
     'atp_tennis'[Rank_2] - 'atp_tennis'[Rank_1]
-)```
+)
+
+```
+
 ## Informe
-El informe cuenta con 3 hojas y contienen diferente infomración:
+El informe cuenta con 3 hojas y contienen diferente información:
 
 ### 1.- Detalle de Finales:
 El usuario podrá controlar mediante segmentadores, la categoría del torneo (ATP 250, ATP 500, ATP 1000, Masters, Grands Slam), el nombre del torneo y el año del mismo.
-Una vez seleccionados los valores, el dashboard mostrará los jugadores que disputaron la final y el ganador del torneo con el score y diferencia de ránking.
+Una vez seleccionados los valores, el dashboard mostrará los jugadores que disputaron la final y el ganador del torneo con el resultado y diferencia de ránking.
 Un detalle estético es que el color de tipografía para el tipo de superficie varía según sea arcilla, hierba o pista rápida. A continuación unos ejemplos de estas combinaciones:
-![Ejemplo1_Finales](Muestras)  
+![Ejemplo1_Finales](Imagenes/Detalle_finales_1.png)  
+![Ejemplo1_Finales](Imagenes/Detalle_finales_2.png)  
+
+### 2.- Grand Slam:
+Esta hoja es estática y agrupa a los mayores ganadores de los 4 principales torneos de tenis de 2000 a la fecha (Australian Open, Roland Garros, Wimbledon y US Open) y permite comparar por superficie y especialistas.
+![Ejemplo1_Finales](Imagenes/Grand_Slam.png) 
+
+### 3.- Evolución Big 4:
+El usuario podrá filtrar por el tipo de superficie que desee analizar mientras el gráfico de series de tiempo indica cuántas victorias tiene cada uno de los 4 grandes (Federer, Nadal, Djokovic y Murray). Al costado del gráfico contamos con una tabla resumen para poder comparar las magnitudes de las victorias.
+![Ejemplo1_Finales](Imagenes/Evolucion_big4.png) 
+
+# Conclusiones
+Se invita al lector a seguir con el análisis del mundo del tenis. Algunas opciones de mejora son: incluir ubicación geográfica de los torneos, nacionalidad de los jugadores, filtrar solo por jugadores chilenos, etc.
+
+
+
