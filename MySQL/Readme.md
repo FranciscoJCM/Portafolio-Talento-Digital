@@ -17,7 +17,7 @@ Dentro de sus funcionalidades y aplicación en el modelado y diseño de datos de
 ---
 
 ## Dataset
-Para el presente proyecto se utilizó la base de datos "Jardinería" difundida por José Juan Sánchez que puedes encontrar en el siguiente **[link]([url](https://josejuansanchez.org/bd/ejercicios-consultas-sql/index.html#jardiner%C3%ADa))**.
+Para el presente proyecto se utilizó la base de datos "Jardinería" difundida por José Juan Sánchez que puedes encontrar en el siguiente **[link](https://josejuansanchez.org/bd/ejercicios-consultas-sql/index.html#jardiner%C3%ADa)**.
 
 ```sql
 Primero se creó la base de datos:
