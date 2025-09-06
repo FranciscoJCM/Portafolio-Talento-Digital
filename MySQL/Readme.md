@@ -57,7 +57,7 @@ INSERT INTO cliente VALUES (1,'GoldFish Garden','Daniel G','GoldFish','555690174
 ---
 
 ## Queries
-A continuación se responderán diferentes preguntas que surgieron al revisar el modelo relacional de Jardinería.
+A continuación se responderán diferentes preguntas que surgieron al revisar el modelo relacional de Jardinería. Los resultados de cada una de las consultas se encuentran en el archivo "Queries_jardinería.sql" para su revisión.
 ### Queries unitabla
 1.- ¿Cuáles son las formas de pago disponibles?
 ```sql
@@ -89,7 +89,19 @@ WHERE gama = 'Herramientas';
 
 
 ### Queries multitabla (joins)
-2.- ¿Cuáles son las oficinas que menos cumplen con fecha de entrega, basándose en la suma de productos?
+1.- ¿Cuales son las 5 ciudades con más venta?
+```sql
+SELECT o.ciudad, SUM(p.total) AS total_pagos
+FROM pago AS p
+JOIN cliente AS c ON p.codigo_cliente = c.codigo_cliente
+JOIN empleado AS e ON c.codigo_empleado_rep_ventas = e.codigo_empleado
+JOIN oficina AS o ON e.codigo_oficina = o.codigo_oficina
+GROUP BY o.ciudad
+ORDER BY total_pagos DESC
+LIMIT 5;
+```
+
+2.- ¿Cuáles son las oficinas que menos cumplen con fecha de entrega, basándose en la suma de productos? (se condiciona con WHERE las cantidades fuera de plazo de entrega)
 ```sql
 SELECT o.ciudad, o.codigo_oficina, SUM(dp.cantidad) AS total_productos_entregados_fuera_de_tiempo
 FROM pedido AS p
@@ -101,3 +113,33 @@ WHERE p.fecha_entrega > p.fecha_esperada
 GROUP BY o.codigo_oficina, o.ciudad
 ORDER BY total_productos_entregados_fuera_de_tiempo DESC;
 ```
+
+3.- ¿Cuales empleados por sucursal fueron los que más vendieron en 2009?
+```sql
+SELECT e.nombre, e.apellido1, o.ciudad AS sucursal, SUM(p.total) AS total_ventas
+FROM pago AS p
+JOIN cliente AS c ON p.codigo_cliente = c.codigo_cliente
+JOIN empleado AS e ON c.codigo_empleado_rep_ventas = e.codigo_empleado
+JOIN oficina AS o ON e.codigo_oficina = o.codigo_oficina
+WHERE YEAR(p.fecha_pago) = 2009
+GROUP BY e.codigo_empleado, o.ciudad
+ORDER BY total_ventas DESC
+LIMIT 10;
+```
+
+4- ¿Cuáles son los 20 de productos que nunca se han entregado? (suma de pedidos sin fecha de entrega)
+```sql
+SELECT p.nombre AS nombre_producto, SUM(dp.cantidad) AS total_cantidad_pedida
+FROM producto AS p
+JOINdetalle_pedido AS dp ON p.codigo_producto = dp.codigo_producto
+JOIN pedido AS ped ON dp.codigo_pedido = ped.codigo_pedido
+WHERE ped.fecha_entrega IS NULL
+GROUP BY p.nombre
+ORDER BY total_cantidad_pedida DESC
+LIMIT 20;
+```
+# Conclusiones
+
+Este proyecto permitió practicar variadas consultas a una o varias tablas tiempo para responder a diferentes interrogantes. Además se incluyeron diferentes filtros, agrupaciones y agregaciones de variables para comprender mejor la base y poder responder las preguntas planteadas.
+Asimismo, se invita al lector a continuar el análisis del dataset con la inclusión de consultas anidadas que podrían entregar un panorama más claro de tendencias o un análisis más profundo de ciertos análisis.
+
