@@ -57,3 +57,47 @@ INSERT INTO cliente VALUES (1,'GoldFish Garden','Daniel G','GoldFish','555690174
 ---
 
 ## Queries
+A continuación se responderán diferentes preguntas que surgieron al revisar el modelo relacional de Jardinería.
+### Queries unitabla
+1.- ¿Cuáles son las formas de pago disponibles?
+```sql
+SELECT DISTINCT forma_pago
+FROM pago;
+```
+2.- ¿Cuáles son los métodos de pago con más recaudación? (se usa variable agregada del total y se renombra)
+```sql
+SELECT forma_pago, SUM(total) as Ventas_totales
+FROM pago
+GROUP BY forma_pago;
+```
+3.- ¿Qué países tienen más clientes?
+```sql
+SELECT pais, COUNT(codigo_cliente) as Clientes_totales
+FROM cliente
+GROUP BY pais
+ORDER BY Clientes_totales DESC;
+```
+4.- ¿Cuáles son los productos de la gama "Herramientas" y sus precios de venta?
+```sql
+SELECT nombre, precio_venta
+FROM producto
+WHERE gama = 'Herramientas';
+```
+
+
+
+
+
+### Queries multitabla (joins)
+2.- ¿Cuáles son las oficinas que menos cumplen con fecha de entrega, basándose en la suma de productos?
+```sql
+SELECT o.ciudad, o.codigo_oficina, SUM(dp.cantidad) AS total_productos_entregados_fuera_de_tiempo
+FROM pedido AS p
+LEFT JOIN cliente AS c ON p.codigo_cliente = c.codigo_cliente
+LEFT JOIN empleado AS e ON c.codigo_empleado_rep_ventas = e.codigo_empleado
+LEFT JOIN oficina AS o ON e.codigo_oficina = o.codigo_oficina
+LEFT JOIN detalle_pedido AS dp ON p.codigo_pedido = dp.codigo_pedido
+WHERE p.fecha_entrega > p.fecha_esperada
+GROUP BY o.codigo_oficina, o.ciudad
+ORDER BY total_productos_entregados_fuera_de_tiempo DESC;
+```
